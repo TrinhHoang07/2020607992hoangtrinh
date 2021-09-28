@@ -1,0 +1,109 @@
+/* tablet and mobile */
+@media (max-width: 1023px) {
+    .header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+    }
+    .app__container {
+        background-color: #F5F5F5;
+        margin-top: var(--header-height);
+    }
+    :root {
+        --header-height: 86px;
+        --navbar-height: 0px;
+    }
+    .hide-on-tablet-and-mobile {
+        display: none;
+    }
+    .list__bar {
+        display: flex;
+    }
+    .header__card-wrap {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display: none;
+    }
+    .header__card {
+        width: 80px;
+        text-align: right;
+    }
+    .header__card-list {
+        width: 300px;
+    }
+}
+
+/* mobile */
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .header__search-mobile {
+        display: block;
+    }
+    .header__search {
+        flex: 1;
+        height: 46px;
+        background-color: var(--white-color);
+        border-radius: 3px;
+        align-items: center;
+        z-index: 1;
+        position: fixed;
+        top: var(--header-height);
+        width: 100%;
+        animation: mobile__searchhh linear 0.3s;
+    }
+    .header__card {
+        width: 80px; 
+    }
+    .header__logo {
+        margin-left: 40px;
+    }
+
+    .app__content {
+        margin: 0 4px;
+    }
+    @keyframes mobile__searchhh {
+        from {
+            opacity: 0;
+            top: calc(var(--header-height) / 2);
+        }
+        to {
+            opacity: 1;
+            top: calc(var(--header-height));
+        }
+    }
+    #search-mobile-h:checked ~ .header__search {
+        display: flex;
+    }
+
+    .header__search-history {
+        position: fixed;
+        top: calc(var(--header-hight));
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+    .pagination-item {
+        margin: 0;
+    }
+
+    .pagination-item-link {
+        min-width: 36px;
+        font-size: 1.6rem;
+        height: 28px;
+    }
+    .header__card-list {
+        width: 200px;
+    }
+    .footer_mobile {
+        padding-left: 16px;
+    }
+}
